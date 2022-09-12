@@ -1,8 +1,24 @@
 /*
-Ask user what he wants to choose
-compare choice to computer choice
-based on result, return win or loose
-*/
+function removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
+    e.target.classList.remove('playing');
+  }
+
+  function playSound(e) {
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`div[data-key="${e.keyCode}"]`);
+    if (!audio) return;
+
+    key.classList.add('playing');
+    audio.currentTime = 0;
+    audio.play();
+  }
+
+  const keys = Array.from(document.querySelectorAll('.key'));
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+  window.addEventListener('keydown', playSound);
+  */
+
 
 
 function getComputerChoice() {
@@ -38,14 +54,21 @@ function playRound(playerSelection,computerSelection) {
 
 
 
-
-
 function game() {
+
+    const buttons = document.querySelectorAll('button');
+buttons.forEach((button) => { button.addEventListener('click', () => {
+    ;
+    })
+});
+
+
+
     let playerScore = 0;
     let computerScore = 0;
 
-    for (let i = 0; i < 5; i++) {
-        let playerSelection = prompt('Choose between Paper, Rock or Scissors').toLowerCase();
+   
+        let playerSelection = button.id;
         let computerSelection = getComputerChoice();
         let result = playRound(playerSelection, computerSelection);
         playRound(playerSelection, computerSelection);
@@ -65,7 +88,7 @@ function game() {
 
         console.log(result);
         console.log(score);
-    }
+
 
     if (playerScore > computerScore) {
         console.log(`You win the game! The score is ${score}`);
@@ -77,4 +100,3 @@ function game() {
 
 }
 game();
-

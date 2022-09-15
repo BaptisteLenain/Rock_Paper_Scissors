@@ -30,6 +30,7 @@ p {
     gap: 10px;
     color:white;
     font-size: 70px;
+    align-items: center;
 }
 
 .playerContainer, .computerContainer {

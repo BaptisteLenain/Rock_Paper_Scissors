@@ -16,16 +16,23 @@ h1 {
     font-size: 40px;
 }
 
+p {
+    color: white;
+    font-size: 18px;
+    margin: -20px 0 10px 0;
+    font-weight: bold;
+}
+
 .score {
     background: rgb(214, 255, 246);
     display: flex;
     justify-content: center;
     gap: 10px;
-    color:rgb(214, 255, 246);
+    color:white;
     font-size: 70px;
 }
 
-.playerScore {
+.playerContainer, .computerContainer {
     background: rgb(35, 22, 81);
     width: 150px;
     height: 150px;
@@ -33,17 +40,10 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
-.computerScore {
-    background: rgb(35, 22, 81);
-    width: 150px;
-    height: 150px;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 
 .resultGame {
     font-weight: bold;

@@ -19,6 +19,10 @@ function removeTransition(e) {
   window.addEventListener('keydown', playSound);
   */
 
+  let playerScore = 0;
+  let computerScore = 0;
+
+
   function getComputerChoice() {
     let rand = Math.floor(Math.random() * 3 + 1);
     if (rand === 1) {
@@ -32,10 +36,10 @@ function removeTransition(e) {
 
 
 let playerSelection = ""
-  const buttons = document.querySelectorAll('button');
+  const buttons = document.querySelectorAll('.glow-on-hover');
   buttons.forEach((button) => { button.addEventListener('click', () => {
     playerSelection = button.id;
-    if (playerScore == 5 || computerScore == 5) {
+    if (playerScore === 5 || computerScore === 5) {
         playerScore = 0;
         computerScore = 0;
     } else {
@@ -74,8 +78,7 @@ function playRound(playerSelection,computerSelection) {
     }
 }
 
-let playerScore = 0;
-let computerScore = 0;
+
 
 let playerScoreDisplay  = document.querySelector('.playerScore');
 let computerScoreDisplay  = document.querySelector('.computerScore');
@@ -103,7 +106,7 @@ function game() {
             }
 
         if (playerScore == 5 && computerScore < 5) {
-            resultGameDisplay.innerHTML = 'YOU WOOOON';
+            resultGameDisplay.innerHTML = 'YOU WIIIIN';
         } else if (playerScore < 5 && computerScore == 5) {
             resultGameDisplay.innerHTML = 'YOU LOOOOSE'; 
         } else {
